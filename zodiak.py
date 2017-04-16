@@ -1,9 +1,10 @@
 import enchant
 import random
-import asyncio
+
 
 lexicon = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
           'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
 
 def apply_lexicon_to_message(message):
     lex_message = ''
@@ -16,7 +17,8 @@ def apply_lexicon_to_message(message):
 
     return lex_message
 
-def zodiac(message, language='en_US'):
+
+def zodiak(message, language='en_US'):
     dictionary = enchant.Dict(language)
 
     count = 0
@@ -30,9 +32,10 @@ def zodiac(message, language='en_US'):
 
     return lex_message
 
+
 def main():
     message = ['square', 'circle', 'triangle', 'triangle', 'diamond', 'kitten']
-    zodiac(message)
+    print(zodiak(message))
 
 if __name__ == '__main__':
     main()

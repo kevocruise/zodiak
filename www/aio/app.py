@@ -1,13 +1,13 @@
 import os
 import sys
 
-import asyncio
 from aiohttp import web
 import aiohttp_jinja2
 import jinja2
 
 sys.path.append(os.getcwd().replace('www/aio', ''))
-import zodiac
+import zodiak
+
 
 @aiohttp_jinja2.template('index.html')
 async def index(request):
@@ -21,7 +21,7 @@ async def zodiac_message(request):
     if zmessage == 'None':
         return web.Response(text='...')
 
-    message = await zodiac.zodiac(zmessage)
+    message = await zodiak.zodiak(zmessage)
     return web.Response(text=message)
 
 
